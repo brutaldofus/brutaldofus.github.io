@@ -1,0 +1,459 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+   <script src="effect.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== SEO de base ===== -->
+  <title>DofuScripts - Pack de scripts et formation totale</title>
+  <meta name="description" content="DofuScripts par 1Brutal : packs de scripts Dofus (1–200), vidéo démonstrative et accompagnement via Discord. Infos, prix, rentabilité et prérequis." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dofuscripts.com/" />
+
+  <!-- Favicon (conservé) -->
+  <link rel="icon" type="image/png" href="pfp DofuScripts.png">
+
+  <!-- ===== Social (Open Graph & Twitter) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DofuScripts">
+  <meta property="og:title" content="DofuScripts — Packs de scripts Dofus & support Discord">
+  <meta property="og:description" content="Packs 1–200, vidéo démo et accompagnement complet par 1Brutal.">
+  <meta property="og:url" content="https://dofuscripts.com/">
+  <!-- Remplace l'image ci-dessous par ton visuel OG réel (1200x630) -->
+  <meta property="og:image" content="https://dofuscripts.com/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DofuScripts — Packs de scripts Dofus & support Discord">
+  <meta name="twitter:description" content="Packs 1–200, vidéo démo, rentabilité et accompagnement Discord.">
+  <meta name="twitter:image" content="https://dofuscripts.com/og-image.jpg">
+
+  <!-- Perf hints pour YouTube -->
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://i.ytimg.com">
+
+  <!-- ===== Données structurées Schema.org ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DofuScripts",
+    "url": "https://dofuscripts.com/",
+    "logo": "https://dofuscripts.com/og-image.jpg",
+    "sameAs": [
+      "https://discord.gg/Y2HVjmgxNg"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DofuScripts",
+    "url": "https://dofuscripts.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dofuscripts.com/recherche?q={query}",
+      "query-input": "required name=query"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"VideoObject",
+    "name":"Vidéo démonstrative DofuScripts",
+    "description":"Démo des packs et fonctionnalités DofuScripts.",
+    "thumbnailUrl":["https://i.ytimg.com/vi/tYnIxwcrqRg/hqdefault.jpg"],
+    "uploadDate":"2024-01-01",
+    "embedUrl":"https://www.youtube-nocookie.com/embed/tYnIxwcrqRg?rel=0&modestbranding=1"
+  }
+  </script>
+
+  <!-- ======= TON CSS D’ORIGINE (inchangé) ======= -->
+  <style>
+    :root{
+      --bg:#000; --fg:#fff; --muted:rgba(255,255,255,.78); --muted2:rgba(255,255,255,.6);
+      --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.12);
+      --accent:#d946ef; --accent-2:#6d28d9;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    .container{max-width:1080px;margin-inline:auto;padding:0 1rem}
+    .header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--border);background:rgba(0,0,0,.7);backdrop-filter:saturate(150%) blur(6px);}
+    .brand{display:flex;align-items:center;gap:.5rem}
+    .nav{display:flex;gap:1.25rem}
+    .nav a{color:var(--muted);text-decoration:none;font-size:.95rem;  transition: transform 0.5s ease, color 0.5s ease;}
+    .nav a:hover{color:#fff;transform: scale(1.1);}
+    .burger{display:none;appearance:none;background:none;border:1px solid var(--border);border-radius:.6rem;color:#fff;padding:.45rem .6rem}
+
+    section{scroll-margin-top:84px;padding:3.25rem 0}
+    h1{font-size:2.125rem;line-height:1.2;margin:0}
+    h2{font-size:1.5rem;margin:0}
+    h3{margin:0 0 .25rem 0}
+    .muted{color:var(--muted)}
+    .muted2{color:var(--muted2)}
+
+    .grid{display:grid;gap:1rem}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem}
+    .pill{display:inline-block;background:rgba(217,70,239,.22);color:#f0abfc;padding:.35rem .7rem;border-radius:.5rem;font-size:.85rem;white-space:nowrap}
+    .section-bg{position:relative;overflow:hidden;border:1px solid rgba(217,70,239,.35);border-radius:1.25rem;text-align: center;;background:radial-gradient(60% 60% at 50% 35%, rgba(217,70,239,.25), rgba(109,40,217,.18), rgba(0,0,0,0))}
+
+    footer{border-top:1px solid var(--border);background:rgba(0,0,0,.7)}
+    .footer-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+
+    @media (max-width: 768px){
+      body{font-size:15px}
+      h1{font-size:1.6rem}
+      h2{font-size:1.25rem}
+      .cols-2{grid-template-columns:1fr}
+      .nav{display:none}
+      .burger{display:inline-block}
+      .nav.open{display:flex;flex-direction:column;gap:.75rem;position:absolute;right:1rem;top:56px;background:#0a0a0a;border:1px solid var(--border);border-radius:.8rem;padding:.6rem 1rem}
+      section{padding:2.25rem 0}
+      .container{padding:0 .9rem}
+    }
+    
+  </style>
+</head>
+<body>
+   <script src="script.js"></script>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <!-- Logo image -->
+       <div class="brand">
+  <a href="https://dofuscripts.com/">
+    <img src="pfp DofuScripts.png" alt="Logo DofuScripts" class="logo">
+  </a>
+</div>
+      <strong style="font-size:1.5rem">DofuScripts</strong>
+    </div>
+    <nav id="nav" class="nav" aria-label="Navigation principale">
+      <strong><a href="#accueil">ACCUEIL</a></strong>
+      <strong><a href="#packs">NOS PACKS</a></strong>
+      <strong><a href="#video">VIDEO</a></strong>
+      <strong><a href="https://discord.gg/Y2HVjmgxNg" class="nav-button" target="_blank">Discord</a></strong>
+    </nav>
+    <button id="burger" class="burger" aria-label="Ouvrir le menu">☰</button>
+  </div>
+  
+</header>
+
+  <main>
+    <section id="accueil">
+      <div class="snow-container"></div>
+      <div class="container" >
+        
+        <h1 style="font-size: 4rem">Comme un <br> boost pour Dofus.</h1><br>
+        <p2 class="muted2" style="font-size: 1.5rem; line-height: 1;">Bénéficiez d'un avantage injuste sur les joueurs, tout <br> 
+          en restant totalement indétectable</p2>                                  
+          <div class="right-image">
+    <img src="Tristepin.png" alt="Image à droite" class="fade-in-image glow">
+  </div>
+         
+        <h2 style="margin-top:15rem; color:#AD46FF">Commencez dès maintenant&nbsp;!</h2>
+        <p class="muted" style="margin-top:.5rem">
+          Achetez un de nos packs et commencez à bot avec un suivi complet de notre part du début à la fin, nous répondrons à toutes vos questions durant le processus pour que vous soyez autonome dans le futur et aussi découvrir une autre partie du botting Dofus peu connue. Un Google Doc est inclus également avec tous les stuffs et des explications du lvl 1 à 200.
+        </p>
+
+        <div class="grid cols-2" style="margin-top:1rem">
+          <div class="card">
+            <h3 style=>⚔️ Combats automatique en team de 8 personnages</h3>
+            <p class="muted">Chargez votre script, lancez-le, vendez les ressources et encaissez les kamas&nbsp;!</p>
+          </div>
+          <div class="card">
+            <h3>Rentabilité garantie</h3>
+            <p class="muted">Sois rentable dès le premier jour seulement</p>
+          </div>
+        </div>
+        
+
+        <div class="section-bg" style="margin-top:1rem;padding:1rem">
+          <p class="muted">Rejoins notre cercle privé <span style="color:#8cbbf5">Discord</span> en achetant un de nos packs pour bénéficier de nos services Dofus.</p>
+          <p class="muted2" style="margin:.25rem 0 0 0; color: rgb(1, 240, 121);">+15 membres actuellement</p>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="packs">
+      <div class="container">
+        <h2>Nos packs</h2>
+        <p class="muted" style="margin-top:.25rem">Voici les différents packs</p>
+
+        <div class="card" style="margin-top:1rem">
+          <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+            <h3 style="margin:0">🥉 Pack pierres d'âmes (5 scripts)</h3>
+            <span class="pill">45€</span>
+          </div>
+          <ul class="list muted">
+            <li>Toutes les zones pour confectionner la "Grande pierre d'âme parfaite"</li>
+             </ul>
+              <div class="card" style="margin-top:.75rem">
+            <div style="font-weight:600">Prérequis conseillés</div>
+            <ul class="list muted">
+              <li>Être niveau 110/113</li>
+              <li>Avoir plusieurs comptes déjà stuff</li>
+            </ul>
+          </div>
+          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — 24M de kamas par jour a peu près</p>
+         
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+            <h3 style="margin:0">🥈 Pack zones et donjons du lvl 1 à 150 (30 scripts)</h3>
+            <span class="pill">80€</span>
+          </div>
+          <p class="muted" style="margin:.3rem 0 0 0">Rentabilité garantie</p>
+          <ul class="list muted">
+            <li>Le pack pour farmer les pierres d'âme.</li>
+            <li>Des scripts vous permettant de monter lvl 150 tout en générant des kamas à travers différentes zones et donjons. (Plus d'une vingtaine de scripts, donjons et zones réunis)</li>
+            <li>Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi de ma part tout au long pour vous aider au maximum sur chacune de vos questions. Je pourrai vous conseiller sur quelles zones ou donjons faire.</li>
+            <li>Tous les DofusBook par tranche de niveau ainsi que les profils de classe nécessaires pendant votre leveling, du niveau 1 au niveau 150.</li>
+          </ul>
+          <div class="card" style="margin-top:.75rem">
+            <div style="font-weight:600">Prérequis conseillés</div>
+            <ul class="list muted">
+              <li>15 millions de kamas</li>
+              <li>8 comptes abonnés lvl 1</li>
+            </ul>
+          </div>
+          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — 30 à 50M de kamas par jour</p>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+            <h3 style="margin:0">🥇 Pack zones et donjons du lvl 1 à 200 (43 scripts)</h3>
+            <span class="pill">120€</span>
+          </div>
+          <ul class="list muted">
+            <li>Les 2 packs précédents</li>
+            <li>Rajout de zones et donjons à faire une fois lvl 198</li>
+            <li>Scripts 150 à 200.</li>
+            <li>Tous les DofusBook du pack précédent mais aussi le stuff à utiliser une fois 198.</li>
+            <li>Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi de ma part tout au long pour vous aider au maximum sur chacune de vos questions.</li>
+          </ul>
+          <div class="card" style="margin-top:.75rem">
+            <div style="font-weight:600">Prérequis conseillés</div>
+            <ul class="list muted">
+              <li>15 millions de kamas</li>
+              <li>8 comptes abonnés lvl 1</li>
+              <li>Un budget plus conséquent accélère la progression</li>
+            </ul>
+          </div>
+          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — La rentabilité de la team une fois les zones 200 atteintes varie de 50 à 100 millions de kamas par jour</p>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <p>À prendre en considération ⚠️</p>
+          <p class="muted" style="color:rgb(250, 107, 107)">
+            - Tu peux le faire sur n'importe quel serveur<br>
+            - Nous pouvons fournir les proxy et comptes vierges<br>
+            - Paiement en 2 fois possible pour le plus gros pack.<br>
+            - Nos scripts sont a vie (pas d'abonnement)
+          </p>
+          <p class="muted" style="margin-top:.35rem">Des questions&nbsp;? Contacte <span style="color:#f0abfc">@1brutal</span> sur Discord.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2>Vidéo démonstrative</h2>
+        <p class="muted2" style="margin-top:.25rem">DofuScripts</p>
+        <div class="card" style="margin-top:1rem;padding:0;overflow:hidden">
+          <div style="aspect-ratio:16/9;background:#000">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube-nocookie.com/embed/tYnIxwcrqRg?rel=0&modestbranding=1"
+              title="Vidéo démonstrative DofuScripts"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="discord">
+    <style>
+      .discord-wrap{max-width:760px;margin:0 auto}
+      .discord-title{letter-spacing:.08em;text-transform:uppercase;font-weight:800;font-size:1.35rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+      .discord-title .star{filter:drop-shadow(0 0 6px rgba(217,70,239,.6))}
+      .discord-invite{margin:.5rem 0 1rem 0;text-align:center}
+      .discord-invite a{color:#60a5fa;text-decoration:none}
+      .discord-invite a:hover{text-decoration:underline}
+      .discord-card{padding:0;border:1px solid var(--border);border-radius:.9rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+      .discord-frame{display:block;border:0;width:100%;height:420px;border-radius:.6rem}
+      .btn{display:inline-block;border:1px solid var(--border);padding:.55rem .9rem;border-radius:.6rem;color:#fff;text-decoration:none}
+      .btn:hover{background:rgba(255,255,255,.06)}
+
+      .header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espace entre logo et texte */
+}
+
+.brand .logo {
+  width: 40px;   /* largeur du logo */
+  height: 40px;  /* hauteur du logo */
+  object-fit: contain; /* garde les proportions */
+}
+
+.brand strong {
+  font-size: 0.95rem;
+}
+
+.header .container {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: 2rem 2rem; /* augmente le padding vertical et horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-button {
+    /* permet de gérer la largeur et hauteur */
+  padding: 1rem ;       /* espace à l'intérieur du bouton */
+  background-color: #a812e4;    /* couleur de fond */
+  color: #fff;                  /* couleur du texte */
+  text-decoration: none;        /* supprime le soulignement */
+  border-radius: 15px;           /* coins arrondis, plus grand = plus rond */
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.1);        /* agrandit légèrement le bouton */
+
+}
+
+.nav {
+  display: flex;
+  gap: 2rem; /* augmente l'espacement horizontal entre les liens */
+}
+
+.container {
+  position: relative; /* nécessaire pour que l'image soit positionnée par rapport à ce container */
+}
+
+
+.right-image img {
+  width: 500px;   /* taille de l'image, ajuste selon tes besoins */
+  position: absolute;
+  height: auto;
+   transform: translateY(-50%);
+  right: 0; 
+  
+  object-fit: contain;
+}
+
+.fade-in-image {
+  opacity: 0;
+  transform: translateY(2px); /* petit effet de glissement vers le haut */
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+
+  }
+}
+
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* pour ne pas bloquer les clics */
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+    .glow {
+      position: relative;
+      filter: drop-shadow(0 0 1px #9b2eff) drop-shadow(0 0 15px #9b2eff);
+    }
+
+
+    </style>
+    <div class="container" style="padding:2rem 0 2.25rem 0">
+      <div class="discord-wrap">
+        <div class="discord-title"><span class="star">⭐</span> REJOINDRE LA COMMUNAUTÉ <span class="star">⭐</span></div>
+        <div class="discord-invite muted2">Lien d'invitation permanent :
+          <a id="inviteLink" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noreferrer">https://discord.gg/Y2HVjmgxNg</a>
+        </div>
+        <div class="discord-card">
+          <iframe
+            id="discordWidget"
+            class="discord-frame"
+            title="Discord Widget"
+            src="https://discord.com/widget?id=1425488513432031236&theme=dark"
+            allowtransparency="true"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+        <div id="discordFallback" class="muted" style="display:none;padding:.8rem 0;text-align:center">
+          Le widget semble désactivé sur le serveur. Pour l'activer : <strong>Paramètres du serveur → Widget → Activer le widget</strong>.
+        </div>
+        <div style="text-align:center;margin-top:1rem">
+          <a class="btn" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noreferrer">Rejoins-nous !</a>
+        </div>
+        <div style="text-align:center;margin-top:1rem;color:var(--muted2)">© <span id="y"></span> — Brutal HQ. Tout droits réservés.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+</body>
+</html>
