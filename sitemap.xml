@@ -4,10 +4,4 @@
     <loc>https://www.dofuscripts.com/</loc>
     <priority>1.00</priority>
   </url>
-  
-  <!-- Ajouter d'autres URLs si besoin -->
-  <url>
-    <loc>https://www.dofuscripts.com/page2.html</loc>
-    <priority>0.80</priority>
-  </url>
 </urlset>
