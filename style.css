@@ -229,7 +229,7 @@ html, body {
 
 /* Sécurise tous les conteneurs pour éviter un léger débordement */
 .image-container ,{
-  max-width: 100vw; /* ✅ empêche tout dépassement horizontal */
+  max-width: 100%; /* ✅ empêche tout dépassement horizontal */
   overflow-x: hidden;
 }
 
