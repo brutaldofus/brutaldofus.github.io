@@ -98,13 +98,7 @@ a:active {
       .btn{display:inline-block;border:1px solid var(--border);padding:.55rem .9rem;border-radius:.6rem;color:#fff;text-decoration:none}
       .btn:hover{background:rgba(255,255,255,.06)}
 
-      .header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  position: relative;
-}
+
 
 .brand {
   display: flex;
@@ -113,9 +107,10 @@ a:active {
 }
 
 .brand .logo {
-  width: 40px;   /* largeur du logo */
-  height: 40px;  /* hauteur du logo */
-  object-fit: contain; /* garde les proportions */
+  width: 42px;              /* taille du logo */
+  height: 42px;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .brand strong {
@@ -123,13 +118,12 @@ a:active {
 }
 
 .header .container {
-  max-width: 1080px;
-  margin-inline: auto;
-  padding: 2rem 2rem; /* augmente le padding vertical et horizontal */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 120px; /* ajuste si nécessaire */
 }
+
 
 .nav-button {
     /* permet de gérer la largeur et hauteur */
