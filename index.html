@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===== SEO de base ===== -->
   <title>DofuScripts - Pack de scripts sur Dofus Unity 3.0</title>
@@ -17,12 +17,12 @@
   <!-- ===== Social (Open Graph & Twitter) ===== -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DofuScripts">
-  <meta property="og:title" content="DofuScripts — Packs de scripts et formation totale sur Dofus Unity 3.0">
+  <meta property="og:title" content="DofuScripts — Packs de scripts et formation totale sur Dofus 3.0">
   <meta property="og:description" content="Packs de scripts Dofus 1–200, vidéo démo et accompagnement complet">
   <meta property="og:url" content="https://www.dofuscripts.com/">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DofuScripts — Packs de scripts et formation totale sur Dofus Unity 3.0">
+  <meta name="twitter:title" content="DofuScripts — Packs de scripts et formation totale sur Dofus 3.0">
   <meta name="twitter:description" content="Packs de scripts Dofus 1–200, vidéo démo et accompagnement complet">
   <meta name="twitter:url" content="https://www.dofuscripts.com">
 
@@ -75,52 +75,9 @@
   }
   </script>
 
-  <!-- ======= TON CSS D’ORIGINE (inchangé) ======= -->
-  <style>
-    :root{
-      --bg:#000; --fg:#fff; --muted:rgba(255,255,255,.78); --muted2:rgba(255,255,255,.6);
-      --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.12);
-      --accent:#d946ef; --accent-2:#6d28d9;
-    }
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"}
-    .container{max-width:1080px;margin-inline:auto;padding:0 1rem}
-    .header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--border);background:rgba(0,0,0,.7);backdrop-filter:saturate(150%) blur(6px);}
-    .brand{display:flex;align-items:center;gap:.5rem}
-    .nav{display:flex;gap:1.25rem}
-    .nav a{color:var(--muted);text-decoration:none;font-size:.95rem;  transition: transform 0.5s ease, color 0.5s ease;}
-    .nav a:hover{color:#fff;transform: scale(1.1);}
-    .burger{display:none;appearance:none;background:none;border:1px solid var(--border);border-radius:.6rem;color:#fff;padding:.45rem .6rem}
+  <!-- ======= CSS ======= -->
+<link rel="stylesheet" href="style.css">
 
-    section{scroll-margin-top:84px;padding:3.25rem 0}
-    h1{font-size:2.125rem;line-height:1.2;margin:0}
-    h2{font-size:1.5rem;margin:0}
-    h3{margin:0 0 .25rem 0}
-    .muted{color:var(--muted)}
-    .muted2{color:var(--muted2)}
-
-    .grid{display:grid;gap:1rem}
-    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem}
-    .pill{display:inline-block;background:rgba(217,70,239,.22);color:#f0abfc;padding:.35rem .7rem;border-radius:.5rem;font-size:.85rem;white-space:nowrap}
-    .section-bg{position:relative;overflow:hidden;border:1px solid rgba(217,70,239,.35);border-radius:1.25rem;text-align: center;;background:radial-gradient(60% 60% at 50% 35%, rgba(217,70,239,.25), rgba(109,40,217,.18), rgba(0,0,0,0))}
-
-    footer{border-top:1px solid var(--border);background:rgba(0,0,0,.7)}
-    .footer-grid{display:grid;gap:1rem;grid-template-columns:1fr}
-
-    @media (max-width: 768px){
-      body{font-size:15px}
-      h1{font-size:1.6rem}
-      h2{font-size:1.25rem}
-      .cols-2{grid-template-columns:1fr}
-      .nav{display:none}
-      .burger{display:inline-block}
-      .nav.open{display:flex;flex-direction:column;gap:.75rem;position:absolute;right:1rem;top:56px;background:#0a0a0a;border:1px solid var(--border);border-radius:.8rem;padding:.6rem 1rem}
-      section{padding:2.25rem 0}
-      .container{padding:0 .9rem}
-    }
-    
-  </style>
 </head>
 <body>
    <script src="script.js"></script>
@@ -153,11 +110,12 @@
         
         <h1 style="font-size: 4rem">Comme un <br> boost pour Dofus.</h1><br>
         <p2 class="muted2" style="font-size: 1.5rem; line-height: 1;">Bénéficiez d'un avantage injuste sur les joueurs, tout <br> 
-          en restant totalement indétectable</p2>                                  
+          en restant totalement indétectable</p2>
+          <div class="image-container">                                  
           <div class="right-image">
     <img src="Tristepin.png" alt="Image à droite" class="fade-in-image glow">
   </div>
-         
+         </div>
         <h2 style="margin-top:15rem; color:#AD46FF">Commencez dès maintenant&nbsp;!</h2>
         <p class="muted" style="margin-top:.5rem">
           Achetez un de nos packs et commencez à bot avec un suivi complet de notre part du début à la fin, nous répondrons à toutes vos questions durant le processus pour que vous soyez autonome dans le futur et aussi découvrir une autre partie du botting Dofus peu connue. Un Google Doc est inclus également avec tous les stuffs et des explications du lvl 1 à 200.
@@ -288,141 +246,6 @@
   </main>
 
   <footer id="discord">
-    <style>
-      .discord-wrap{max-width:760px;margin:0 auto}
-      .discord-title{letter-spacing:.08em;text-transform:uppercase;font-weight:800;font-size:1.35rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
-      .discord-title .star{filter:drop-shadow(0 0 6px rgba(217,70,239,.6))}
-      .discord-invite{margin:.5rem 0 1rem 0;text-align:center}
-      .discord-invite a{color:#60a5fa;text-decoration:none}
-      .discord-invite a:hover{text-decoration:underline}
-      .discord-card{padding:0;border:1px solid var(--border);border-radius:.9rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-      .discord-frame{display:block;border:0;width:100%;height:420px;border-radius:.6rem}
-      .btn{display:inline-block;border:1px solid var(--border);padding:.55rem .9rem;border-radius:.6rem;color:#fff;text-decoration:none}
-      .btn:hover{background:rgba(255,255,255,.06)}
-
-      .header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* espace entre logo et texte */
-}
-
-.brand .logo {
-  width: 40px;   /* largeur du logo */
-  height: 40px;  /* hauteur du logo */
-  object-fit: contain; /* garde les proportions */
-}
-
-.brand strong {
-  font-size: 0.95rem;
-}
-
-.header .container {
-  max-width: 1080px;
-  margin-inline: auto;
-  padding: 2rem 2rem; /* augmente le padding vertical et horizontal */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-button {
-    /* permet de gérer la largeur et hauteur */
-  padding: 1rem ;       /* espace à l'intérieur du bouton */
-  background-color: #a812e4;    /* couleur de fond */
-  color: #fff;                  /* couleur du texte */
-  text-decoration: none;        /* supprime le soulignement */
-  border-radius: 15px;           /* coins arrondis, plus grand = plus rond */
-  font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.nav-button:hover {
-  transform: scale(1.1);        /* agrandit légèrement le bouton */
-
-}
-
-.nav {
-  display: flex;
-  gap: 2rem; /* augmente l'espacement horizontal entre les liens */
-}
-
-.container {
-  position: relative; /* nécessaire pour que l'image soit positionnée par rapport à ce container */
-}
-
-
-.right-image img {
-  width: 500px;   /* taille de l'image, ajuste selon tes besoins */
-  position: absolute;
-  height: auto;
-   transform: translateY(-50%);
-  right: 0; 
-  
-  object-fit: contain;
-}
-
-.fade-in-image {
-  opacity: 0;
-  transform: translateY(2px); /* petit effet de glissement vers le haut */
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-
-  }
-}
-
-.snow-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* pour ne pas bloquer les clics */
-  overflow: hidden;
-  z-index: 9999;
-}
-
-.snowflake {
-  position: absolute;
-  top: -10px;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
-}
-
-    .glow {
-      position: relative;
-      filter: drop-shadow(0 0 1px #9b2eff) drop-shadow(0 0 15px #9b2eff);
-    }
-
-
-    </style>
     <div class="container" style="padding:2rem 0 2.25rem 0">
       <div class="discord-wrap">
         <div class="discord-title"><span class="star">⭐</span> REJOINDRE LA COMMUNAUTÉ <span class="star">⭐</span></div>
@@ -449,11 +272,27 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
-    burger.addEventListener('click', () => nav.classList.toggle('open'));
-  </script>
+<script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  const navLinks = nav.querySelectorAll('a');
+
+  // Ouvre / ferme le menu quand on clique sur le burger
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('active');
+  });
+
+  // Ferme le menu quand on clique sur un lien
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      burger.classList.remove('active');
+    });
+  });
+</script>
+
+
+  <script src="effect.js"></script>
 </body>
 </html>

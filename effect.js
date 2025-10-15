@@ -14,3 +14,18 @@ for(let i = 0; i < numFlakes; i++){
 
   container.appendChild(flake);
 }
+
+// ======== MENU BURGER RESPONSIVE ========
+
+// Récupère les éléments du DOM
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+
+// Vérifie que les éléments existent avant d'ajouter l'événement
+if (burger && nav) {
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("open"); // Ajoute ou retire la classe .open
+  });
+}
+
+
