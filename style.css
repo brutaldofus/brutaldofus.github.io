@@ -185,10 +185,10 @@ a:active {
   
   .right-image img {
     width: 80%;
-    max-width: 400px;
+    max-width: 380px;
     height: auto;
     position: relative;
-    top: 120px; /* ✅ décale l’image sans bouger le texte */
+    top: 120px;
   }
 }
 
