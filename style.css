@@ -166,10 +166,19 @@ a:active {
   max-width: 100%;
 }
 
+
 .right-image img {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+
+@media (min-width: 769px) {
+  /* Restaure le glow sur PC */
+  .fade-in-image.glow {
+    filter: drop-shadow(0 0 20px #ad46ff);
+  }
 }
 
 @media (max-width: 768px) {
@@ -181,8 +190,9 @@ a:active {
 
   }
 
-  * {
-  outline: 1px solid rgba(255, 0, 0, 0.3);
+/* ⚡ Cas spécifique du glow violet qui dépasse souvent */
+.fade-in-image.glow {
+  filter: drop-shadow(0 0 0 transparent); /* retire le halo sur mobile */
 }
   
   .right-image img {
@@ -375,7 +385,8 @@ html, body {
 
 html, body {
   overflow-x: hidden !important;
-  width: 100%;
+  width: 100% !important;
+  position: relative;
 }
 
 * {
