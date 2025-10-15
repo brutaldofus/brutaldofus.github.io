@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const container = document.querySelector(".snow-container");
   if (!container) return;
 
-const numFlakes = 3; // nombre de flocons
+const numFlakes = 2; // nombre de flocons
 
 for(let i = 0; i < numFlakes; i++){
   const flake = document.createElement("div");
@@ -13,7 +13,7 @@ for(let i = 0; i < numFlakes; i++){
   flake.style.width = flake.style.height = Math.random() * 8 + 4 + "px";
 
   // vitesse aléatoire
-  flake.style.animationDuration = Math.random() * 15 + 10 + "s";
+  flake.style.animationDuration = Math.random() * 20 + 15 + "s";
 
   container.appendChild(flake);
 }
