@@ -381,7 +381,16 @@ html, body {
   }
 }
 
-
+/* === Centrage du titre Discord sur mobile === */
+@media (max-width: 768px) {
+  #discord .discord-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
 
 * {
   max-width: 100%;
