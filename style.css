@@ -369,3 +369,13 @@ html, body {
     transform: translateY(-10px) rotate(-45deg);
   }
 }
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
