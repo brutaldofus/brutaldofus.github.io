@@ -160,9 +160,10 @@ a:active {
 /* === Image positionnée à droite sur PC === */
 .right-image {
   position: absolute;
-  top: -26px;           /* ✅ ajuste la hauteur de placement (à adapter) */
+  top: -26px;
   right: 0;
   width: 500px;
+  max-width: 100%;
 }
 
 .right-image img {
