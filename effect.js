@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.languageCode": "PT",
       "nav.languageFlag": "https://flagcdn.com/w40/pt.png",
       "hero.title": "Como um <br> impulso para o Dofus.",
-      "hero.subtitle": "Ganhe uma vantagem injusta <br> sobre outros jogadores enquanto permanece completamente indetectável",
+      "hero.subtitle": "Ganhe uma vantagem injusta sobre outros jogadores",
       "hero.ctaHeading": "Comece agora!",
       "hero.ctaBody": "Compre um de nossos pacotes e comece a usar bots com total orientação de nossa equipe. Ficamos com você do início ao fim, respondendo a todas as perguntas para que você se torne autônomo e descubra o lado menos conhecido do botting no Dofus. Um Google Doc com todas as builds e explicações do nível 1 ao 200 está incluído.",
       "hero.cardCombatTitle": "⚔️ Lutas automatizadas com uma equipe completa de 8 personagens",
