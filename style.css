@@ -504,6 +504,12 @@
       margin-top: 20rem;
       /* colle juste ce h2 à l’image */
     }
+
+    /* === Ajustement image Tristepin pour ES/PT === */
+    html:lang(es) .right-image,
+    html:lang(pt) .right-image {
+      transform: translateX(90px);
+    }
   }
 
 
@@ -738,3 +744,11 @@
     padding-top: 111px !important;
     /* <- ajuste: 72px est un point de départ courant */
   }
+
+     / *   = = =   A j u s t e m e n t   i m a g e   T r i s t e p i n   p o u r   E S / P T   = = =   * /     h t m l : l a n g ( e s )   . r i g h t - i m a g e ,
+       h t m l : l a n g ( p t )   . r i g h t - i m a g e    {
+             t r a n s f o r m :    t r a n s l a t e X ( 4 0 p x ) ;
+         
+  }
+
+       
