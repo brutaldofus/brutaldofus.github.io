@@ -1,13 +1,14 @@
-
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===== SEO de base ===== -->
   <title>DofuScripts - Pack de scripts sur Dofus Unity 3.0</title>
-  <meta name="description" content="DofuScripts est un accompagnement total avec une proposition de packs de scripts Dofus (lvl 1–200), vidéo démonstrative et accompagnement via Discord." />
+  <meta name="description"
+    content="DofuScripts est un accompagnement total avec une proposition de packs de scripts Dofus (lvl 1–200), vidéo démonstrative et accompagnement via Discord." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.dofuscripts.com/" />
 
@@ -76,66 +77,96 @@
   </script>
 
   <!-- ======= CSS ======= -->
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-   <script src="script.js"></script>
-<header class="header">
-  <div class="container">
-    <div class="brand">
-      <!-- Logo image -->
-       <div class="brand">
-  <a href="https://www.dofuscripts.com/">
-    <img src="DofuScripts.png" alt="Logo DofuScripts" class="logo">
-  </a>
-</div>
-      <strong style="font-size:1.5rem">DofuScripts</strong>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <!-- Logo image -->
+        <div class="brand">
+          <a href="https://www.dofuscripts.com/">
+            <img src="DofuScripts.png" alt="Logo DofuScripts" class="logo">
+          </a>
+        </div>
+        <strong style="font-size:1.5rem">DofuScripts</strong>
+      </div>
+      <nav id="nav" class="nav" aria-label="Navigation principale">
+        <div class="language-toggle">
+          <button id="languageButton" class="language-button" type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="languageMenu" aria-label="Changer de langue">
+            <span class="sr-only" data-i18n="nav.languageLabel">Changer de langue</span>
+            <img id="languageButtonFlag" class="flag-icon" src="https://flagcdn.com/w40/fr.png" alt="FR" />
+            <span id="languageButtonLabel">FR</span>
+            <span class="language-caret" aria-hidden="true">▾</span>
+          </button>
+          <div id="languageMenu" class="language-menu" role="menu">
+            <button type="button" class="language-option" data-lang="fr" role="menuitem">
+              <img class="flag-icon" src="https://flagcdn.com/w40/fr.png" alt="FR" /> Français
+            </button>
+            <button type="button" class="language-option" data-lang="en" role="menuitem">
+              <img class="flag-icon" src="https://flagcdn.com/w40/gb.png" alt="GB" /> English
+            </button>
+            <button type="button" class="language-option" data-lang="es" role="menuitem">
+              <img class="flag-icon" src="https://flagcdn.com/w40/es.png" alt="ES" /> Español
+            </button>
+          </div>
+        </div>
+        <strong><a href="#accueil" data-i18n="nav.home">ACCUEIL</a></strong>
+        <strong><a href="#packs" data-i18n="nav.packs">NOS PACKS</a></strong>
+        <strong><a href="#video" data-i18n="nav.video">VIDEO</a></strong>
+        <strong><a href="https://discord.gg/Y2HVjmgxNg" class="nav-button" target="_blank"
+            data-i18n="nav.discord">Discord</a></strong>
+      </nav>
+      <button id="burger" class="burger" aria-label="Ouvrir le menu">☰</button>
     </div>
-    <nav id="nav" class="nav" aria-label="Navigation principale">
-      <strong><a href="#accueil">ACCUEIL</a></strong>
-      <strong><a href="#packs">NOS PACKS</a></strong>
-      <strong><a href="#video">VIDEO</a></strong>
-      <strong><a href="https://discord.gg/Y2HVjmgxNg" class="nav-button" target="_blank">Discord</a></strong>
-    </nav>
-    <button id="burger" class="burger" aria-label="Ouvrir le menu">☰</button>
-  </div>
-  
-</header>
+
+  </header>
 
   <main>
     <section id="accueil">
       <div class="snow-container"></div>
-      <div class="container" >
-        
-        <h1 style="font-size: 4rem">Comme un <br> boost pour Dofus.</h1><br>
-        <p2 class="muted2" style="font-size: 1.5rem; line-height: 1;">Bénéficiez d'un avantage injuste sur les joueurs, tout <br> 
-          en restant totalement indétectable</p2>
-          <div class="image-container">                                  
+      <div class="container">
+
+        <h1 style="font-size: 4rem" data-i18n="hero.title">Comme un <br> boost pour Dofus.</h1>
+        <p class="muted2" style="font-size: 1.5rem; line-height: 1;" data-i18n="hero.subtitle">Bénéficiez d'un avantage
+          injuste sur les joueurs, tout <br>
+          en restant totalement indétectable</p>
+        <div class="image-container">
           <div class="right-image">
-    <img src="Tristepin.png" alt="Image à droite" class="fade-in-image glow">
-  </div>
-         </div>
-        <h2 style="margin-top:15rem; color:#AD46FF">Commencez dès maintenant&nbsp;!</h2>
-        <p class="muted" style="margin-top:.5rem">
-          Achetez un de nos packs et commencez à bot avec un suivi complet de notre part du début à la fin, nous répondrons à toutes vos questions durant le processus pour que vous soyez autonome dans le futur et aussi découvrir une autre partie du botting Dofus peu connue. Un Google Doc est inclus également avec tous les stuffs et des explications du lvl 1 à 200.
+            <img src="Tristepin.png" alt="Image à droite" class="fade-in-image glow">
+          </div>
+        </div>
+        <h2 style="margin-top:15rem; color:#AD46FF" data-i18n="hero.ctaHeading">Commencez dès maintenant&nbsp;!</h2>
+        <p class="muted" style="margin-top:.5rem" data-i18n="hero.ctaBody">
+          Achetez un de nos packs et commencez à bot avec un suivi complet de notre part du début à la fin, nous
+          répondrons à toutes vos questions durant le processus pour que vous soyez autonome dans le futur et aussi
+          découvrir une autre partie du botting Dofus peu connue. Un Google Doc est inclus également avec tous les
+          stuffs et des explications du lvl 1 à 200.
         </p>
 
         <div class="grid cols-2" style="margin-top:1rem">
           <div class="card">
-            <h3 style=>⚔️ Combats automatique en team de 8 personnages</h3>
-            <p class="muted">Chargez votre script, lancez-le, vendez les ressources et encaissez les kamas&nbsp;!</p>
+            <h3 data-i18n="hero.cardCombatTitle">⚔️ Combats automatique en team de 8 personnages</h3>
+            <p class="muted" data-i18n="hero.cardCombatBody">Chargez votre script, lancez-le, vendez les ressources et
+              encaissez les kamas&nbsp;!</p>
           </div>
           <div class="card">
-            <h3>Rentabilité garantie</h3>
-            <p class="muted">Sois rentable dès le premier jour seulement</p>
+            <h3 data-i18n="hero.cardRoiTitle">Rentabilité garantie</h3>
+            <p class="muted" data-i18n="hero.cardRoiBody">Sois rentable dès le premier jour seulement</p>
           </div>
         </div>
-        
+
 
         <div class="section-bg" style="margin-top:1rem;padding:1rem">
-          <p class="muted">Rejoins notre cercle privé <span style="color:#8cbbf5">Discord</span> en achetant un de nos packs pour bénéficier de nos services Dofus.</p>
-          <p class="muted2" style="margin:.25rem 0 0 0; color: rgb(1, 240, 121);">+15 membres actuellement</p>
+          <p class="muted" data-i18n="hero.sectionBgText">Rejoins notre cercle privé <span
+              style="color:#8cbbf5">Discord</span> en achetant un de nos packs pour bénéficier de nos services Dofus.
+          </p>
+          <p class="muted2" style="margin:.25rem 0 0 0; color: rgb(1, 240, 121);" data-i18n="hero.sectionBgMembers">+15
+            membres actuellement</p>
 
         </div>
       </div>
@@ -143,102 +174,108 @@
 
     <section id="packs">
       <div class="container">
-        <h2>Nos packs</h2>
-        <p class="muted" style="margin-top:.25rem">Voici les différents packs</p>
+        <h2 data-i18n="packs.title">Nos packs</h2>
+        <p class="muted" style="margin-top:.25rem" data-i18n="packs.subtitle">Voici les différents packs</p>
 
         <div class="card" style="margin-top:1rem">
           <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
-            <h3 style="margin:0">🥉 Pack pierres d'âmes (5 scripts)</h3>
+            <h3 style="margin:0" data-i18n="pack1.title">🥉 Pack pierres d'âmes (5 scripts)</h3>
             <span class="pill">45€</span>
           </div>
           <ul class="list muted">
-            <li>Toutes les zones pour confectionner la "Grande pierre d'âme parfaite"</li>
-             </ul>
-              <div class="card" style="margin-top:.75rem">
-            <div style="font-weight:600">Prérequis conseillés</div>
-            <ul class="list muted">
-              <li>Être niveau 110/113</li>
-              <li>Avoir plusieurs comptes déjà stuff</li>
-            </ul>
-          </div>
-          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — 24M de kamas par jour a peu près</p>
-         
-        </div>
-
-        <div class="card" style="margin-top:1rem">
-          <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
-            <h3 style="margin:0">🥈 Pack zones et donjons du lvl 1 à 150 (30 scripts)</h3>
-            <span class="pill">80€</span>
-          </div>
-          <p class="muted" style="margin:.3rem 0 0 0">Rentabilité garantie</p>
-          <ul class="list muted">
-            <li>Le pack pour farmer les pierres d'âme.</li>
-            <li>Des scripts vous permettant de monter lvl 150 tout en générant des kamas à travers différentes zones et donjons. (Plus d'une vingtaine de scripts, donjons et zones réunis)</li>
-            <li>Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi de ma part tout au long pour vous aider au maximum sur chacune de vos questions. Je pourrai vous conseiller sur quelles zones ou donjons faire.</li>
-            <li>Tous les DofusBook par tranche de niveau ainsi que les profils de classe nécessaires pendant votre leveling, du niveau 1 au niveau 150.</li>
+            <li data-i18n="pack1.feature1">Toutes les zones pour confectionner la "Grande pierre d'âme parfaite"</li>
           </ul>
           <div class="card" style="margin-top:.75rem">
-            <div style="font-weight:600">Prérequis conseillés</div>
+            <div style="font-weight:600" data-i18n="packs.prereqTitle">Prérequis conseillés</div>
             <ul class="list muted">
-              <li>15 millions de kamas</li>
-              <li>8 comptes abonnés lvl 1</li>
+              <li data-i18n="pack1.prereq1">Être niveau 110/113</li>
+              <li data-i18n="pack1.prereq2">Avoir plusieurs comptes déjà stuff</li>
             </ul>
           </div>
-          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — 30 à 50M de kamas par jour</p>
+          <p class="muted" style="margin-top:.5rem" data-i18n="pack1.rentability"><strong
+              style="color:#AD46FF">Rentabilité</strong> — 24M de kamas par jour a peu près</p>
+
         </div>
 
         <div class="card" style="margin-top:1rem">
           <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
-            <h3 style="margin:0">🥇 Pack zones et donjons du lvl 1 à 200 (43 scripts)</h3>
+            <h3 style="margin:0" data-i18n="pack2.title">🥈 Pack zones et donjons du lvl 1 à 150 (30 scripts)</h3>
+            <span class="pill">80€</span>
+          </div>
+          <p class="muted" style="margin:.3rem 0 0 0" data-i18n="pack2.tagline">Rentabilité garantie</p>
+          <ul class="list muted">
+            <li data-i18n="pack2.feature1">Le pack pour farmer les pierres d'âme.</li>
+            <li data-i18n="pack2.feature2">Des scripts vous permettant de monter lvl 150 tout en générant des kamas à
+              travers différentes zones et donjons. (Plus d'une vingtaine de scripts, donjons et zones réunis)</li>
+            <li data-i18n="pack2.feature3">Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi
+              de ma part tout au long pour vous aider au maximum sur chacune de vos questions. Je pourrai vous
+              conseiller sur quelles zones ou donjons faire.</li>
+            <li data-i18n="pack2.feature4">Tous les DofusBook par tranche de niveau ainsi que les profils de classe
+              nécessaires pendant votre leveling, du niveau 1 au niveau 150.</li>
+          </ul>
+          <div class="card" style="margin-top:.75rem">
+            <div style="font-weight:600" data-i18n="packs.prereqTitle">Prérequis conseillés</div>
+            <ul class="list muted">
+              <li data-i18n="pack2.prereq1">15 millions de kamas</li>
+              <li data-i18n="pack2.prereq2">8 comptes abonnés lvl 1</li>
+            </ul>
+          </div>
+          <p class="muted" style="margin-top:.5rem" data-i18n="pack2.rentability"><strong
+              style="color:#AD46FF">Rentabilité</strong> — 30 à 50M de kamas par jour</p>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <div style="display:flex;gap:.75rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+            <h3 style="margin:0" data-i18n="pack3.title">🥇 Pack zones et donjons du lvl 1 à 200 (43 scripts)</h3>
             <span class="pill">120€</span>
           </div>
           <ul class="list muted">
-            <li>Les 2 packs précédents</li>
-            <li>Rajout de zones et donjons à faire une fois lvl 198</li>
-            <li>Scripts 150 à 200.</li>
-            <li>Tous les DofusBook du pack précédent mais aussi le stuff à utiliser une fois 198.</li>
-            <li>Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi de ma part tout au long pour vous aider au maximum sur chacune de vos questions.</li>
+            <li data-i18n="pack3.feature1">Les 2 packs précédents</li>
+            <li data-i18n="pack3.feature2">Rajout de zones et donjons à faire une fois lvl 198</li>
+            <li data-i18n="pack3.feature3">Scripts 150 à 200.</li>
+            <li data-i18n="pack3.feature4">Tous les DofusBook du pack précédent mais aussi le stuff à utiliser une fois
+              198.</li>
+            <li data-i18n="pack3.feature5">Une feuille de route que vous pourrez suivre complètement ainsi qu'un suivi
+              de ma part tout au long pour vous aider au maximum sur chacune de vos questions.</li>
           </ul>
           <div class="card" style="margin-top:.75rem">
-            <div style="font-weight:600">Prérequis conseillés</div>
+            <div style="font-weight:600" data-i18n="packs.prereqTitle">Prérequis conseillés</div>
             <ul class="list muted">
-              <li>15 millions de kamas</li>
-              <li>8 comptes abonnés lvl 1</li>
-              <li>Un budget plus conséquent accélère la progression</li>
+              <li data-i18n="pack3.prereq1">15 millions de kamas</li>
+              <li data-i18n="pack3.prereq2">8 comptes abonnés lvl 1</li>
+              <li data-i18n="pack3.prereq3">Un budget plus conséquent accélère la progression</li>
             </ul>
           </div>
-          <p class="muted" style="margin-top:.5rem"><strong style="color:#AD46FF">Rentabilité</strong> — La rentabilité de la team une fois les zones 200 atteintes varie de 50 à 100 millions de kamas par jour</p>
+          <p class="muted" style="margin-top:.5rem" data-i18n="pack3.rentability"><strong
+              style="color:#AD46FF">Rentabilité</strong> — La rentabilité de la team une fois les zones 200 atteintes
+            varie de 50 à 100 millions de kamas par jour</p>
         </div>
 
         <div class="card" style="margin-top:1rem">
-          <p>À prendre en considération ⚠️</p>
-          <p class="muted" style="color:rgb(250, 107, 107)">
+          <p data-i18n="packs.noticeTitle">À prendre en considération ⚠️</p>
+          <p class="muted" style="color:rgb(250, 107, 107)" data-i18n="packs.noticeBody">
             - Tu peux le faire sur n'importe quel serveur<br>
             - Nous pouvons fournir les proxy et comptes vierges<br>
             - Paiement en 2 fois possible pour le plus gros pack.<br>
             - Nos scripts sont a vie (pas d'abonnement)
           </p>
-          <p class="muted" style="margin-top:.35rem">Des questions&nbsp;? Contacte <span style="color:#f0abfc">@1brutal</span> sur Discord.</p>
+          <p class="muted" style="margin-top:.35rem" data-i18n="packs.questions">Des questions&nbsp;? Contacte <span
+              style="color:#f0abfc">@1brutal</span> sur Discord.</p>
         </div>
       </div>
     </section>
 
     <section id="video">
       <div class="container">
-        <h2>Vidéo démonstrative</h2>
-        <p class="muted2" style="margin-top:.25rem">DofuScripts</p>
+        <h2 data-i18n="video.title">Vidéo démonstrative</h2>
+        <p class="muted2" style="margin-top:.25rem" data-i18n="video.subtitle">DofuScripts</p>
         <div class="card" style="margin-top:1rem;padding:0;overflow:hidden">
           <div style="aspect-ratio:16/9;background:#000">
-            <iframe
-              width="100%"
-              height="100%"
+            <iframe width="100%" height="100%"
               src="https://www.youtube-nocookie.com/embed/tYnIxwcrqRg?rel=0&modestbranding=1"
-              title="Vidéo démonstrative DofuScripts"
-              frameborder="0"
+              title="Vidéo démonstrative DofuScripts" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+              loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -248,51 +285,55 @@
   <footer id="discord">
     <div class="container" style="padding:2rem 0 2.25rem 0">
       <div class="discord-wrap">
-        <div class="discord-title"><span class="star">⭐</span> REJOINDRE LA COMMUNAUTÉ <span class="star">⭐</span></div>
-        <div class="discord-invite muted2">Lien d'invitation permanent :
-          <a id="inviteLink" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noreferrer">https://discord.gg/Y2HVjmgxNg</a>
+        <div class="discord-title"><span class="star">⭐</span> <span data-i18n="footer.communityTitle">REJOINDRE LA
+            COMMUNAUTÉ</span> <span class="star">⭐</span></div>
+        <div class="discord-invite muted2">
+          <span data-i18n="footer.invite">Lien d'invitation permanent :</span>
+          <a id="inviteLink" href="https://discord.gg/Y2HVjmgxNg" target="_blank"
+            rel="noreferrer">https://discord.gg/Y2HVjmgxNg</a>
         </div>
         <div class="discord-card">
-          <iframe
-            id="discordWidget"
-            class="discord-frame"
-            title="Discord Widget"
-            src="https://discord.com/widget?id=1425488513432031236&theme=dark"
-            allowtransparency="true"
+          <iframe id="discordWidget" class="discord-frame" title="Discord Widget"
+            src="https://discord.com/widget?id=1425488513432031236&theme=dark" allowtransparency="true"
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
-        <div id="discordFallback" class="muted" style="display:none;padding:.8rem 0;text-align:center">
-          Le widget semble désactivé sur le serveur. Pour l'activer : <strong>Paramètres du serveur → Widget → Activer le widget</strong>.
+        <div id="discordFallback" class="muted" style="display:none;padding:.8rem 0;text-align:center"
+          data-i18n="footer.widgetFallback">
+          Le widget semble désactivé sur le serveur. Pour l'activer : <strong>Paramètres du serveur → Widget → Activer
+            le widget</strong>.
         </div>
         <div style="text-align:center;margin-top:1rem">
-          <a class="btn" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noreferrer">Rejoins-nous !</a>
+          <a class="btn" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noreferrer"
+            data-i18n="footer.joinCta">Rejoins-nous !</a>
         </div>
-        <div style="text-align:center;margin-top:1rem;letter-spacing: -0.29px;color:rgb(56, 55, 55)">Copyright 2025 <span id="y"></span> — Brutal HQ. Tout droits réservés.</div>
+        <div style="text-align:center;margin-top:1rem;letter-spacing: -0.29px;color:rgb(56, 55, 55)"
+          data-i18n="footer.copyright">Copyright 2025-2026 — Brutal HQ. Tout droits réservés.</div>
       </div>
     </div>
   </footer>
 
-<script>
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('nav');
-  const navLinks = nav.querySelectorAll('a');
+  <script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    const navLinks = nav.querySelectorAll('a');
 
-  // Ouvre / ferme le menu quand on clique sur le burger
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    burger.classList.toggle('active');
-  });
-
-  // Ferme le menu quand on clique sur un lien
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      burger.classList.remove('active');
+    // Ouvre / ferme le menu quand on clique sur le burger
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      burger.classList.toggle('active');
     });
-  });
-</script>
+
+    // Ferme le menu quand on clique sur un lien
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.classList.remove('active');
+      });
+    });
+  </script>
 
 
-  <script src="effect.js"></script>
+
 </body>
+
 </html>
