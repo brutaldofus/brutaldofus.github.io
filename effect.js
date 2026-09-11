@@ -306,8 +306,34 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const defaultLanguage = "fr";
-  const storedLanguage = localStorage.getItem("dofuLang");
-  let activeLanguage = translations[storedLanguage] ? storedLanguage : defaultLanguage;
+
+  // Chaque langue a sa propre page (/, /en/, /es/, /pt/, /ma/) pour le référencement.
+  // La langue de la page est indiquée par l'attribut data-page-lang de <html>.
+  const pageLang = document.documentElement.dataset.pageLang;
+  const pageLanguage = translations[pageLang] ? pageLang : defaultLanguage;
+
+  let storedLanguage = null;
+  try {
+    storedLanguage = localStorage.getItem("dofuLang");
+  } catch (error) {
+    storedLanguage = null;
+  }
+
+  const languageHref = (lang) => {
+    const option = document.querySelector(`.language-option[data-lang="${lang}"]`);
+    return option ? option.dataset.href : null;
+  };
+
+  // Sur la page française, un visiteur qui avait choisi une autre langue y est renvoyé
+  if (pageLanguage === defaultLanguage && storedLanguage && storedLanguage !== defaultLanguage && translations[storedLanguage]) {
+    const href = languageHref(storedLanguage);
+    if (href) {
+      window.location.replace(href);
+      return;
+    }
+  }
+
+  let activeLanguage = pageLanguage;
 
   const languageButton = document.getElementById("languageButton");
   const languageMenu = document.getElementById("languageMenu");
@@ -339,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     activeLanguage = lang;
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === "ar" ? "ar-MA" : lang;
 
     // Set text direction: LTR for all (Darija is Latin script)
     document.documentElement.dir = 'ltr';
@@ -362,7 +388,6 @@ document.addEventListener("DOMContentLoaded", () => {
     languageOptions.forEach((option) => {
       option.classList.toggle("active", option.dataset.lang === lang);
     });
-    localStorage.setItem("dofuLang", lang);
   };
 
   if (languageButton && languageMenu) {
@@ -375,8 +400,19 @@ document.addEventListener("DOMContentLoaded", () => {
   languageOptions.forEach((option) => {
     option.addEventListener("click", (event) => {
       event.stopPropagation();
-      const { lang } = option.dataset;
+      const { lang, href } = option.dataset;
       if (lang) {
+        // Seul un choix explicite du visiteur est mémorisé
+        try {
+          localStorage.setItem("dofuLang", lang);
+        } catch (error) {
+          // stockage indisponible (navigation privée) : on ignore
+        }
+        // Autre langue : on ouvre la page de cette langue
+        if (lang !== pageLanguage && href) {
+          window.location.href = href;
+          return;
+        }
         setLanguage(lang);
         closeLanguageMenu();
       }

@@ -58,8 +58,23 @@
   }
 
   .nav a:hover {
-    color: #fff;
-    transform: scale(1.1);
+    color: var(--fg);
+    transform: translateY(-2px)
+  }
+
+  .nav-button {
+    background-color: #a855f7;
+    color: #fff !important;
+    padding: .4rem .9rem;
+    border-radius: .5rem;
+    text-transform: none !important;
+    transition: all .3s ease;
+  }
+
+  .nav-button:hover {
+    background-color: #9333ea;
+    box-shadow: 0 0 12px rgba(168, 85, 247, .5);
+    transform: translateY(-2px);
   }
 
   .burger {
@@ -480,29 +495,29 @@
 
   @media (max-width: 768px) {
     .right-image {
-      position: static;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-    }
-
-
-
-    .right-image img {
+      position: relative;
+      top: auto;
+      right: auto;
       width: 80%;
       max-width: 380px;
+      margin: 2.5rem auto 0;
+    }
+
+    .right-image img {
+      width: 100%;
       height: auto;
-      position: relative;
-      top: 120px;
+    }
+
+    /* Le conteneur ne doit plus rogner le personnage */
+    .image-container {
+      overflow: visible;
     }
   }
 
 
   @media (max-width: 768px) {
     .image-container+h2 {
-      margin-top: 20rem;
-      /* colle juste ce h2 à l’image */
+      margin-top: 3rem !important;
     }
 
 
@@ -511,10 +526,7 @@
 
 
   .fade-in-image {
-    opacity: 0;
-    transform: translateY(2px);
-    /* petit effet de glissement vers le haut */
-    animation: fadeIn 1s ease-out forwards;
+    opacity: 1;
   }
 
   @keyframes fadeIn {
@@ -739,4 +751,426 @@
   body {
     padding-top: 111px !important;
     /* <- ajuste: 72px est un point de départ courant */
+  }
+
+  /* L'image WebP est dans un <picture> : on garde la mise en page de l'<img> */
+  .right-image picture {
+    display: contents;
+  }
+
+  /* =========================================================
+     Section packs — grille moderne
+     ========================================================= */
+
+  #packs {
+    --pk-border: rgba(255, 255, 255, .08);
+    --pk-border-hi: rgba(192, 132, 252, .38);
+    --pk-accent: #a855f7;
+    --pk-accent-soft: #d8b4fe;
+    --pk-danger: rgb(250, 107, 107);
+    --pk-grad: linear-gradient(135deg, #c084fc 0%, #a855f7 45%, #d946ef 100%);
+    --pk-grad-text: linear-gradient(120deg, #e9d5ff 0%, #c084fc 40%, #f0abfc 100%);
+    --pk-ease: cubic-bezier(.2, .7, .2, 1);
+    --pk-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e9d5ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 12.5l4 4L18.5 7.5'/%3E%3C/svg%3E");
+  }
+
+  /* En-tête de section */
+  #packs .section-head {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  #packs .section-head::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    margin: 0 auto 1.25rem;
+    border-radius: 4px;
+    background: var(--pk-grad);
+    box-shadow: 0 0 16px rgba(217, 70, 239, .6);
+  }
+
+  #packs .section-head h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+
+  #packs .section-head p {
+    margin: .6rem 0 0;
+    font-size: 1.05rem;
+  }
+
+  /* Grille */
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  #packs .card p {
+    margin: 0;
+  }
+
+  #packs .pack-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--pk-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018));
+    transition: transform .4s var(--pk-ease), border-color .4s ease, box-shadow .4s ease;
+  }
+
+  /* Liseré lumineux en haut de carte */
+  #packs .pack-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(216, 180, 254, .7), transparent);
+  }
+
+  #packs .pack-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--pk-border-hi);
+    box-shadow: 0 30px 60px -30px rgba(168, 85, 247, .55);
+  }
+
+  /* Titre + prix */
+  .pack-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .85rem;
+    padding-bottom: 1.35rem;
+    margin-bottom: 1.35rem;
+    border-bottom: 1px solid var(--pk-border);
+  }
+
+  .pack-head h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  #packs .pill.price {
+    padding: 0;
+    border-radius: 0;
+    background: var(--pk-grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.04em;
+  }
+
+  #packs .pack-tagline {
+    display: inline-flex;
+    align-items: center;
+    padding: .3rem .75rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--pk-accent-soft);
+    background: rgba(168, 85, 247, .12);
+    border: 1px solid rgba(168, 85, 247, .3);
+  }
+
+  /* Listes avec coches */
+  #packs .list {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: .75rem;
+  }
+
+  #packs .list li {
+    position: relative;
+    padding-left: 1.85rem;
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  #packs .list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .18em;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, .2) var(--pk-check) center / 72% no-repeat;
+    box-shadow: inset 0 0 0 1px rgba(192, 132, 252, .35);
+  }
+
+  /* Prérequis */
+  #packs .prereq {
+    margin-top: auto;
+    padding: 1.1rem 1.2rem;
+    background: rgba(0, 0, 0, .28);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 14px;
+  }
+
+  #packs .prereq-title {
+    margin-bottom: .7rem;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--pk-accent-soft);
+  }
+
+  #packs .prereq .list {
+    margin: 0;
+    gap: .4rem;
+  }
+
+  #packs .prereq .list li {
+    padding-left: 1.1rem;
+    font-size: .9rem;
+  }
+
+  #packs .prereq .list li::before {
+    top: .62em;
+    width: 6px;
+    height: 6px;
+    background: var(--pk-accent);
+    box-shadow: 0 0 8px rgba(168, 85, 247, .8);
+  }
+
+  /* Rentabilité */
+  #packs .pack-card .rentability {
+    margin-top: .75rem;
+    padding: .85rem 1rem;
+    border-radius: 12px;
+    font-size: .92rem;
+    line-height: 1.55;
+    background: linear-gradient(90deg, rgba(168, 85, 247, .12), rgba(168, 85, 247, .03));
+    border: 1px solid rgba(168, 85, 247, .18);
+  }
+
+  #packs .rentability strong {
+    color: #c084fc !important;
+  }
+
+  /* Pack mis en avant */
+  #packs .pack-featured {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(180deg, #170e27, #0d0917) padding-box,
+      linear-gradient(150deg, rgba(216, 180, 254, .9), rgba(217, 70, 239, .55) 40%, rgba(99, 102, 241, .6)) border-box;
+    box-shadow: 0 30px 80px -35px rgba(168, 85, 247, .75);
+  }
+
+  #packs .pack-featured:hover {
+    border-color: transparent;
+    box-shadow: 0 40px 90px -35px rgba(217, 70, 239, .9);
+  }
+
+  #packs .pack-featured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(80% 45% at 50% 0%, rgba(168, 85, 247, .22), transparent 70%);
+    pointer-events: none;
+  }
+
+  #packs .pack-featured>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Avertissement */
+  #packs .notice-card {
+    position: relative;
+    margin-top: 4.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(250, 107, 107, .22);
+    background: linear-gradient(135deg, rgba(250, 107, 107, .09), rgba(255, 255, 255, .02) 55%);
+  }
+
+  #packs .notice-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, #fb7185, #f59e0b);
+  }
+
+  #packs .notice-title {
+    margin: 0 0 .8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  #packs .notice-body {
+    color: var(--pk-danger);
+    line-height: 1.95;
+  }
+
+  #packs .notice-contact {
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--pk-border);
+  }
+
+  /* Tablette : une colonne centrée */
+  @media (max-width: 1080px) {
+
+    .packs-grid,
+    #packs .notice-card {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 680px;
+      margin-inline: auto;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    #packs .pack-card {
+      padding: 1.35rem;
+    }
+
+    #packs .notice-card {
+      padding: 1.4rem 1.4rem 1.4rem 1.6rem;
+    }
+
+    #packs .pill.price {
+      font-size: 2.6rem;
+    }
+
+    #packs .notice-body {
+      line-height: 1.75;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #packs .pack-card {
+      transition: none;
+    }
+
+    #packs .pack-card:hover {
+      transform: none;
+    }
+  }
+
+  /* =========================================================
+     Tristepin — animation au chargement (sans déplacement)
+     1. l'image apparaît en fondu
+     2. un reflet file le long de la lame, de la garde à la pointe
+     3. un éclat en étoile s'allume sur la pointe
+     Le masque blade-mask.png ne laisse passer la lumière que sur la lame.
+     ========================================================= */
+
+  .right-image {
+    isolation: isolate;
+    animation: tristepin-fade 1s ease-out .1s both;
+  }
+
+  .blade-shine {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    -webkit-mask: url("blade-mask.png") center / contain no-repeat;
+    mask: url("blade-mask.png") center / contain no-repeat;
+  }
+
+  /* Bande de lumière, perpendiculaire à la lame, qui file vers la pointe */
+  .blade-shine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: 0;
+    width: 14%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(180, 215, 255, .35) 28%,
+        rgba(255, 255, 255, .95) 50%,
+        rgba(180, 215, 255, .35) 72%,
+        transparent 100%);
+    opacity: 0;
+    transform: translateX(170%) rotate(-18deg);
+    animation: blade-shine 1s cubic-bezier(.45, 0, .2, 1) .75s both;
+  }
+
+  /* Éclat en étoile à la pointe de l'épée */
+  .blade-glint {
+    position: absolute;
+    left: 98.5%;
+    top: 27%;
+    width: 28%;
+    aspect-ratio: 1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    background:
+      radial-gradient(circle, #fff 0 5%, rgba(255, 255, 255, .85) 9%, rgba(200, 160, 255, .4) 20%, transparent 42%),
+      linear-gradient(90deg, transparent, rgba(255, 255, 255, .95) 50%, transparent) center / 100% 3% no-repeat,
+      linear-gradient(0deg, transparent, rgba(255, 255, 255, .95) 50%, transparent) center / 3% 100% no-repeat;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.2);
+    animation: blade-glint 1s ease-out 1.55s both;
+  }
+
+  @keyframes tristepin-fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blade-shine {
+    0% {
+      opacity: 0;
+      transform: translateX(170%) rotate(-18deg);
+    }
+
+    15%,
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(690%) rotate(-18deg);
+    }
+  }
+
+  @keyframes blade-glint {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.2) rotate(-30deg);
+    }
+
+    30% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1) rotate(10deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.5) rotate(45deg);
+    }
   }
