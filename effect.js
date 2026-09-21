@@ -1,3 +1,17 @@
+// ============================================================
+//  PAIEMENT STRIPE — seul bloc a modifier
+// ------------------------------------------------------------
+//  Colle ici l'URL du Stripe Payment Link de chaque pack.
+//  Stripe -> Produits -> Payment links -> "Creer un lien de paiement".
+//  Tant qu'une URL reste vide, le bouton "Acheter" du pack
+//  renvoie vers le Discord (aucun bouton mort sur le site).
+// ============================================================
+const STRIPE_LINKS = {
+  pack1: "https://buy.stripe.com/dRm28r33Df5K5CYgZHfAc00", // Pack pierres d'ames - 45 EUR
+  pack2: "https://buy.stripe.com/14A7sL0VvaPufdy6l3fAc01", // Pack zones et donjons lvl 1-150 - 80 EUR
+  pack3: "https://buy.stripe.com/8x2eVdeMl4r6c1meRzfAc02", // Pack zones et donjons lvl 1-200 - 120 EUR
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".snow-container");
   if (container) {
@@ -14,6 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Bouton d'achat de chaque pack : Payment Link Stripe si renseigne,
+  // sinon on garde le lien Discord ecrit dans le HTML.
+  document.querySelectorAll("a.pack-buy[data-stripe]").forEach((link) => {
+    const url = STRIPE_LINKS[link.dataset.stripe];
+    if (url) {
+      link.href = url;
+    }
+  });
+
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
   if (burger && nav) {
@@ -28,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.packs": "NOS PACKS",
       "nav.video": "VIDEO",
       "nav.discord": "Discord",
+      "nav.purchase": "Acheter",
       "nav.languageLabel": "Changer de langue",
       "nav.languageCode": "FR",
       "nav.languageFlag": "https://flagcdn.com/w40/fr.png",
@@ -43,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sectionBgMembers": "+15 membres actuellement",
       "packs.title": "Nos packs",
       "packs.subtitle": "Voici les différents packs",
+      "packs.buy": "Acheter ce pack",
       "packs.prereqTitle": "Prérequis conseillés",
       "packs.noticeTitle": "À prendre en considération ⚠️",
       "packs.noticeBody": "- Tu peux le faire sur n'importe quel serveur<br>- Nous pouvons fournir les proxy et comptes vierges<br>- Paiement en 2 fois possible pour le plus gros pack.<br>- Nos scripts sont a vie (pas d'abonnement)",
@@ -84,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.packs": "OUR PACKS",
       "nav.video": "VIDEO",
       "nav.discord": "Discord",
+      "nav.purchase": "Purchase",
       "nav.languageLabel": "Change language",
       "nav.languageCode": "EN",
       "nav.languageFlag": "https://flagcdn.com/w40/gb.png",
@@ -99,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sectionBgMembers": "+15 members right now",
       "packs.title": "Our packs",
       "packs.subtitle": "Pick the bundle that suits your goals",
+      "packs.buy": "Buy this pack",
       "packs.prereqTitle": "Recommended prerequisites",
       "packs.noticeTitle": "Important to consider ⚠️",
       "packs.noticeBody": "- Works on every server<br>- We can provide proxies and fresh accounts<br>- 2-part payment possible for the biggest pack<br>- Scripts are lifetime licenses (no subscription)",
@@ -140,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.packs": "NUESTROS PACKS",
       "nav.video": "VIDEO",
       "nav.discord": "Discord",
+      "nav.purchase": "Comprar",
       "nav.languageLabel": "Cambiar idioma",
       "nav.languageCode": "ES",
       "nav.languageFlag": "https://flagcdn.com/w40/es.png",
@@ -155,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sectionBgMembers": "+15 miembros actualmente",
       "packs.title": "Nuestros packs",
       "packs.subtitle": "Elige el pack que encaja contigo",
+      "packs.buy": "Comprar este pack",
       "packs.prereqTitle": "Requisitos recomendados",
       "packs.noticeTitle": "A tener en cuenta ⚠️",
       "packs.noticeBody": "- Funciona en cualquier servidor<br>- Podemos proporcionar proxies y cuentas nuevas<br>- Pago en 2 cuotas para el pack grande<br>- Nuestros scripts son de por vida (sin suscripción)",
@@ -196,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.packs": "NOSSOS PACOTES",
       "nav.video": "VÍDEO",
       "nav.discord": "Discord",
+      "nav.purchase": "Comprar",
       "nav.languageLabel": "Mudar idioma",
       "nav.languageCode": "PT",
       "nav.languageFlag": "https://flagcdn.com/w40/pt.png",
@@ -211,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sectionBgMembers": "+15 membros atualmente",
       "packs.title": "Nossos pacotes",
       "packs.subtitle": "Escolha o pacote que combina com seus objetivos",
+      "packs.buy": "Comprar este pacote",
       "packs.prereqTitle": "Pré-requisitos recomendados",
       "packs.noticeTitle": "Importante considerar ⚠️",
       "packs.noticeBody": "- Funciona em qualquer servidor<br>- Podemos fornecer proxies e contas novas<br>- Pagamento em 2 vezes possível para o maior pacote<br>- Nossos scripts são vitalícios (sem assinatura)",
@@ -252,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.packs": "LES PACKS",
       "nav.video": "VIDEO",
       "nav.discord": "Discord",
+      "nav.purchase": "Chri",
       "nav.languageLabel": "Beddel lougha",
       "nav.languageCode": "MA",
       "nav.languageFlag": "https://flagcdn.com/w40/ma.png",
@@ -267,6 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sectionBgMembers": "+15 membre daba",
       "packs.title": "Les packs dyalna",
       "packs.subtitle": "Khtar pack li kiwaleb l'ahdaf dyalek",
+      "packs.buy": "Chri had l'pack",
       "packs.prereqTitle": "Chorot matlouba",
       "packs.noticeTitle": "Haja mohima khass t3refha ⚠️",
       "packs.noticeBody": "- Khwdam f ay serveur<br>- N9edro n3tiwk proxies o comptes jdad<br>- Momkin tkheles 3la 2 marral l pack lkbir<br>- Les scripts dyalna dial mada lhayat (bla abonnement)",

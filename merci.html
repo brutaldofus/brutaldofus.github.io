@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Page d'aprés-paiement : elle n'a rien à faire dans les moteurs de recherche -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>Merci pour ton achat — DofuScripts</title>
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* La page reprend style.css ; seuls les éléments propres au remerciement sont ici. */
+    .thanks {
+      --th-grad: linear-gradient(135deg, #c084fc 0%, #a855f7 45%, #d946ef 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 120px);
+      padding: 3rem 0;
+    }
+
+    .thanks-card {
+      max-width: 620px;
+      margin-inline: auto;
+      padding: 2.75rem 2.25rem;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(180deg, #170e27, #0d0917) padding-box,
+        linear-gradient(150deg, rgba(216, 180, 254, .9), rgba(217, 70, 239, .55) 40%, rgba(99, 102, 241, .6)) border-box;
+      box-shadow: 0 30px 80px -35px rgba(168, 85, 247, .75);
+      text-align: center;
+    }
+
+    .thanks-check {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 1.4rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--th-grad);
+      box-shadow: 0 16px 34px -14px rgba(168, 85, 247, .9);
+    }
+
+    .thanks-title {
+      margin: 0 0 .6rem;
+      font-size: 1.9rem;
+      line-height: 1.2;
+    }
+
+    .thanks-sub {
+      margin: 0 0 2rem;
+      font-size: 1.02rem;
+    }
+
+    .thanks-steps {
+      list-style: none;
+      margin: 0 0 2rem;
+      padding: 0;
+      display: grid;
+      gap: 1.1rem;
+      text-align: left;
+    }
+
+    .thanks-steps li {
+      position: relative;
+      padding-left: 3.1rem;
+    }
+
+    .thanks-steps li::before {
+      content: counter(thanks-step);
+      counter-increment: thanks-step;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #fff;
+      background: rgba(168, 85, 247, .18);
+      box-shadow: inset 0 0 0 1px rgba(192, 132, 252, .45);
+    }
+
+    .thanks-steps {
+      counter-reset: thanks-step;
+    }
+
+    .thanks-step-title {
+      display: block;
+      font-weight: 600;
+      margin-bottom: .15rem;
+    }
+
+    .thanks-step-body {
+      font-size: .94rem;
+      line-height: 1.55;
+    }
+
+    .thanks-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem 1.25rem;
+      border-radius: 14px;
+      background: #5865f2;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 16px 34px -16px rgba(88, 101, 242, .95);
+      transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+    }
+
+    .thanks-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+      box-shadow: 0 22px 44px -16px rgba(88, 101, 242, 1);
+    }
+
+    .thanks-note {
+      margin: 1.5rem 0 0;
+      padding: .85rem 1rem;
+      border-radius: 12px;
+      font-size: .9rem;
+      line-height: 1.55;
+      background: linear-gradient(90deg, rgba(168, 85, 247, .12), rgba(168, 85, 247, .03));
+      border: 1px solid rgba(168, 85, 247, .18);
+    }
+
+    .thanks-back {
+      display: inline-block;
+      margin-top: 1.6rem;
+      font-size: .92rem;
+      color: var(--muted2);
+    }
+
+    @media (max-width: 768px) {
+      .thanks-card {
+        padding: 2rem 1.35rem;
+      }
+
+      .thanks-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .thanks-cta {
+        transition: none;
+      }
+
+      .thanks-cta:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <a href="/">
+          <img src="logo-96.png" alt="Logo DofuScripts" class="logo" width="42" height="42">
+        </a>
+        <a href="/" class="brand-link">
+          <strong style="font-size:1.5rem">DofuScripts</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="container">
+      <div class="thanks-card">
+
+        <div class="thanks-check" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.5l4.5 4.5L19 7.5" />
+          </svg>
+        </div>
+
+        <h1 class="thanks-title" data-t="heading">Paiement confirmé</h1>
+        <p class="muted2 thanks-sub" data-t="sub">Merci pour ta confiance. Voici comment récupérer ton pack en moins de
+          deux minutes.</p>
+
+        <ol class="thanks-steps">
+          <li>
+            <span class="thanks-step-title" data-t="s1t">Rejoins le Discord</span>
+            <span class="muted thanks-step-body" data-t="s1b">Clique sur le bouton ci-dessous pour entrer sur le
+              serveur.</span>
+          </li>
+          <li>
+            <span class="thanks-step-title" data-t="s2t">Ouvre un ticket</span>
+            <span class="muted thanks-step-body" data-t="s2b">Indique l'adresse e-mail que tu as utilisée pour le
+              paiement.</span>
+          </li>
+          <li>
+            <span class="thanks-step-title" data-t="s3t">Reçois ton pack</span>
+            <span class="muted thanks-step-body" data-t="s3b">On vérifie le paiement, puis on t'envoie tes scripts, ta
+              feuille de route et le suivi.</span>
+          </li>
+        </ol>
+
+        <a class="thanks-cta" href="https://discord.gg/Y2HVjmgxNg" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.3 4.9A19.8 19.8 0 0 0 15.4 3.4l-.2.4a18.3 18.3 0 0 1 4.3 1.5 17.6 17.6 0 0 0-15 0A18.3 18.3 0 0 1 8.8 3.8l-.2-.4A19.8 19.8 0 0 0 3.7 4.9C.9 9.1.1 13.2.5 17.2a19.9 19.9 0 0 0 6 3.1l.7-1.1a13 13 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4a13 13 0 0 1-2 1l.7 1.1a19.9 19.9 0 0 0 6-3.1c.5-4.6-.8-8.7-2.8-12.3ZM8.3 14.8c-1.2 0-2.1-1.1-2.1-2.4 0-1.3.9-2.4 2.1-2.4 1.2 0 2.2 1.1 2.1 2.4 0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4 0-1.3.9-2.4 2.1-2.4 1.2 0 2.2 1.1 2.1 2.4 0 1.3-.9 2.4-2.1 2.4Z" />
+          </svg>
+          <span data-t="cta">Rejoindre le Discord</span>
+        </a>
+
+        <p class="muted thanks-note" data-t="note">Garde l'e-mail de confirmation envoyé par Stripe : c'est ta preuve
+          d'achat.</p>
+
+        <a class="thanks-back" href="/" data-t="back">← Retour au site</a>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Cette page n'est pas générée par _tools/build_i18n.py : elle change de langue
+    // toute seule, côté navigateur. Pas de sous-dossier /en/, /es/... à maintenir.
+    (function () {
+      const T = {
+        fr: {
+          title: "Merci pour ton achat — DofuScripts",
+          heading: "Paiement confirmé",
+          sub: "Merci pour ta confiance. Voici comment récupérer ton pack en moins de deux minutes.",
+          s1t: "Rejoins le Discord",
+          s1b: "Clique sur le bouton ci-dessous pour entrer sur le serveur.",
+          s2t: "Ouvre un ticket",
+          s2b: "Indique l'adresse e-mail que tu as utilisée pour le paiement.",
+          s3t: "Reçois ton pack",
+          s3b: "On vérifie le paiement, puis on t'envoie tes scripts, ta feuille de route et le suivi.",
+          cta: "Rejoindre le Discord",
+          note: "Garde l'e-mail de confirmation envoyé par Stripe : c'est ta preuve d'achat.",
+          back: "← Retour au site"
+        },
+        en: {
+          title: "Thanks for your purchase — DofuScripts",
+          heading: "Payment confirmed",
+          sub: "Thanks for your trust. Here is how to get your pack in under two minutes.",
+          s1t: "Join the Discord",
+          s1b: "Click the button below to enter the server.",
+          s2t: "Open a ticket",
+          s2b: "Give the email address you used to pay.",
+          s3t: "Get your pack",
+          s3b: "We check the payment, then send you your scripts, your roadmap and the follow-up.",
+          cta: "Join the Discord",
+          note: "Keep the confirmation email sent by Stripe: it is your proof of purchase.",
+          back: "← Back to the site"
+        },
+        es: {
+          title: "Gracias por tu compra — DofuScripts",
+          heading: "Pago confirmado",
+          sub: "Gracias por tu confianza. Así consigues tu pack en menos de dos minutos.",
+          s1t: "Entra en el Discord",
+          s1b: "Haz clic en el botón de abajo para entrar al servidor.",
+          s2t: "Abre un ticket",
+          s2b: "Indica el correo electrónico que usaste para pagar.",
+          s3t: "Recibe tu pack",
+          s3b: "Verificamos el pago y te enviamos tus scripts, tu hoja de ruta y el seguimiento.",
+          cta: "Entrar en el Discord",
+          note: "Guarda el correo de confirmación de Stripe: es tu comprobante de compra.",
+          back: "← Volver al sitio"
+        },
+        pt: {
+          title: "Obrigado pela sua compra — DofuScripts",
+          heading: "Pagamento confirmado",
+          sub: "Obrigado pela sua confiança. Veja como receber o seu pacote em menos de dois minutos.",
+          s1t: "Entre no Discord",
+          s1b: "Clique no botão abaixo para entrar no servidor.",
+          s2t: "Abra um ticket",
+          s2b: "Informe o e-mail que usou para pagar.",
+          s3t: "Receba o seu pacote",
+          s3b: "Confirmamos o pagamento e enviamos os seus scripts, o roteiro e o acompanhamento.",
+          cta: "Entrar no Discord",
+          note: "Guarde o e-mail de confirmação da Stripe: é o seu comprovativo de compra.",
+          back: "← Voltar ao site"
+        },
+        ar: {
+          title: "Chokran 3la chra dyalek — DofuScripts",
+          heading: "L'khlas tsedda",
+          sub: "Chokran 3la thiqa dyalek. Hak kifach tjib l'pack dyalek f'qel men jouj daqayq.",
+          s1t: "Dkhol l Discord",
+          s1b: "Klik 3la l'button li t7t bach tdkhol l serveur.",
+          s2t: "7ell ticket",
+          s2b: "3tina l'email li khelesti bih.",
+          s3t: "Tjib l'pack dyalek",
+          s3b: "Nchufu l'khlas, men ba3d nsiftu lik scripts, feuille de route w suivi.",
+          cta: "Dkhol l Discord",
+          note: "7tafed b l'email dyal Stripe: houwa l'preuve dyal chra dyalek.",
+          back: "← Rje3 l site"
+        }
+      };
+
+      // Même clé de stockage que effect.js, pour garder la langue choisie sur le site.
+      const stored = () => {
+        try {
+          return localStorage.getItem("dofuLang");
+        } catch (error) {
+          return null; // navigation privée : on ignore
+        }
+      };
+
+      const fromBrowser = () => {
+        const tag = (navigator.language || "").slice(0, 2).toLowerCase();
+        return tag === "ar" ? "ar" : tag;
+      };
+
+      const param = new URLSearchParams(location.search).get("lang");
+      const lang = [param, stored(), fromBrowser()].find((c) => c && T[c]) || "fr";
+      const dico = T[lang];
+
+      document.documentElement.lang = lang === "ar" ? "ar-MA" : lang;
+      document.title = dico.title;
+      document.querySelectorAll("[data-t]").forEach((node) => {
+        const key = node.dataset.t;
+        if (dico[key]) node.textContent = dico[key];
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
