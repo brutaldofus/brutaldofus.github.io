@@ -1074,7 +1074,7 @@
   /* =========================================================
      Tristepin — animation au chargement (sans déplacement)
      1. l'image apparaît en fondu
-     2. un reflet file le long de la lame, de la garde à la pointe
+     2. un reflet part juste après l'œil de la garde et file jusqu'à la pointe
      3. un éclat en étoile s'allume sur la pointe
      Le masque blade-mask.png ne laisse passer la lumière que sur la lame.
      ========================================================= */
@@ -1109,8 +1109,8 @@
         rgba(180, 215, 255, .35) 72%,
         transparent 100%);
     opacity: 0;
-    transform: translateX(170%) rotate(-18deg);
-    animation: blade-shine 1s cubic-bezier(.45, 0, .2, 1) .75s both;
+    transform: translateX(215%) rotate(-18deg);
+    animation: blade-shine 1s cubic-bezier(.45, 0, .2, 1) .85s both;
   }
 
   /* Éclat en étoile à la pointe de l'épée */
@@ -1128,7 +1128,7 @@
       linear-gradient(0deg, transparent, rgba(255, 255, 255, .95) 50%, transparent) center / 3% 100% no-repeat;
     opacity: 0;
     transform: translate(-50%, -50%) scale(.2);
-    animation: blade-glint 1s ease-out 1.55s both;
+    animation: blade-glint 1s ease-out 1.65s both;
   }
 
   @keyframes tristepin-fade {
@@ -1142,19 +1142,21 @@
   }
 
   @keyframes blade-shine {
+
+    /* Pleine opacite des la premiere image : sinon la lumiere
+       n'apparaît qu'au tiers de la lame, bande deja en route. */
     0% {
-      opacity: 0;
-      transform: translateX(170%) rotate(-18deg);
+      opacity: 1;
+      transform: translateX(215%) rotate(-18deg);
     }
 
-    15%,
     80% {
       opacity: 1;
     }
 
     100% {
       opacity: 0;
-      transform: translateX(690%) rotate(-18deg);
+      transform: translateX(705%) rotate(-18deg);
     }
   }
 
