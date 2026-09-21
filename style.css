@@ -73,8 +73,7 @@
 
   .nav-button:hover {
     background-color: #9333ea;
-    box-shadow: 0 0 12px rgba(168, 85, 247, .5);
-    transform: translateY(-2px);
+    box-shadow: 0 0 14px rgba(168, 85, 247, .55);
   }
 
   .burger {
@@ -449,10 +448,11 @@
     border: 0
   }
 
-  .nav-button:hover {
-    transform: scale(1.1);
-    /* agrandit légèrement le bouton */
-
+  /* Au survol, seul le halo change : ni deplacement ni agrandissement.
+     ".nav a:hover" applique un translateY aux liens du menu, il faut
+     une specificite superieure pour le neutraliser sur les boutons. */
+  .nav .nav-button:hover {
+    transform: none;
   }
 
   .nav {
@@ -1090,8 +1090,8 @@
     overflow: hidden;
     pointer-events: none;
     mix-blend-mode: screen;
-    -webkit-mask: url("blade-mask.png") center / contain no-repeat;
-    mask: url("blade-mask.png") center / contain no-repeat;
+    -webkit-mask: url("blade-mask.png?v=2") center / contain no-repeat;
+    mask: url("blade-mask.png?v=2") center / contain no-repeat;
   }
 
   /* Bande de lumière, perpendiculaire à la lame, qui file vers la pointe */
@@ -1109,8 +1109,8 @@
         rgba(180, 215, 255, .35) 72%,
         transparent 100%);
     opacity: 0;
-    transform: translateX(215%) rotate(-18deg);
-    animation: blade-shine 1s cubic-bezier(.45, 0, .2, 1) .85s both;
+    transform: translateX(194%) rotate(-18deg);
+    animation: blade-shine 1s cubic-bezier(.45, 0, .2, 1) .6s forwards;
   }
 
   /* Éclat en étoile à la pointe de l'épée */
@@ -1128,7 +1128,7 @@
       linear-gradient(0deg, transparent, rgba(255, 255, 255, .95) 50%, transparent) center / 3% 100% no-repeat;
     opacity: 0;
     transform: translate(-50%, -50%) scale(.2);
-    animation: blade-glint 1s ease-out 1.65s both;
+    animation: blade-glint 1s ease-out 1.45s both;
   }
 
   @keyframes tristepin-fade {
@@ -1147,7 +1147,7 @@
        n'apparaît qu'au tiers de la lame, bande deja en route. */
     0% {
       opacity: 1;
-      transform: translateX(215%) rotate(-18deg);
+      transform: translateX(194%) rotate(-18deg);
     }
 
     80% {
@@ -1177,16 +1177,75 @@
     }
   }
 
-  /* === Bouton "Acheter" du menu === */
+  /* === Les deux boutons du menu, detaches des liens texte === */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    /* s'ajoute au gap du .nav : ecarte la paire des liens texte */
+    margin-left: 1.5rem;
+  }
+
+  /* Les <strong> passent en flex : le lien devient un bloc et n'est plus
+     aligne sur la ligne de base. Sans ca, overflow:hidden decale le
+     bouton vers le haut par rapport au Discord voisin. */
+  .nav-actions strong {
+    display: flex;
+    align-items: center;
+  }
+
+  /* === Bouton "Acheter" du menu ===
+     Or champagne : seul bouton dore de la page, il tranche avec le
+     magenta du Discord et concentre l'attention sur l'achat.
+     Texte en brun tres sombre, obligatoire : du blanc sur de l'or
+     ne passe pas le contraste minimum et devient illisible. */
   .nav-button-buy {
+    /* overflow : decoupe le reflet aux coins arrondis du bouton */
+    position: relative;
+    overflow: hidden;
     background-color: transparent;
-    background-image: linear-gradient(120deg, #3b82f6 0%, #22b6d6 55%, #2dd4bf 100%);
-    box-shadow: 0 10px 24px -12px rgba(45, 212, 191, .8);
+    background-image: linear-gradient(135deg, #fde68a 0%, #f5c146 45%, #d99614 100%);
+    color: #2b1a02 !important;
+    box-shadow: 0 10px 26px -12px rgba(245, 193, 70, .8);
+  }
+
+  /* Reflet qui balaie le bouton toutes les 7 s */
+  .nav-button-buy::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    bottom: -60%;
+    left: 0;
+    width: 42%;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, .25) 35%,
+        rgba(255, 255, 255, .8) 50%,
+        rgba(255, 255, 255, .25) 65%,
+        transparent 100%);
+    z-index: 2;
+    transform: translateX(-260%) rotate(18deg);
+    /* Cycle de 10 s, dont 10 % (1 s) de balayage puis 9 s de pause.
+       Le delai de 10 s repousse le premier passage : la page se charge,
+       puis le reflet part a 10 s, 20 s, 30 s... tant qu'elle reste ouverte. */
+    animation: nav-buy-shine 10s linear 10s infinite;
+  }
+
+  @keyframes nav-buy-shine {
+    0% {
+      transform: translateX(-260%) rotate(18deg);
+    }
+
+    10%,
+    100% {
+      transform: translateX(420%) rotate(18deg);
+    }
   }
 
   .nav-button-buy:hover {
-    background-image: linear-gradient(120deg, #2563eb 0%, #0ea5c4 55%, #14b8a6 100%);
-    box-shadow: 0 14px 30px -12px rgba(45, 212, 191, .95);
+    background-image: linear-gradient(135deg, #fef3c7 0%, #fbd36b 45%, #eaa71f 100%);
+    box-shadow: 0 0 18px rgba(245, 193, 70, .7);
   }
 
   /* === Bouton "Acheter ce pack" dans chaque carte === */
@@ -1217,6 +1276,9 @@
 
   @media (prefers-reduced-motion: reduce) {
 
+    /* Choix assume : le reflet du bouton "Acheter" reste actif meme
+       en mode animations reduites. */
+
     .nav-button-buy,
     #packs .pack-buy {
       transition: none;
@@ -1224,6 +1286,37 @@
 
     #packs .pack-buy:hover {
       transform: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    /* Menu burger : les deux boutons s'empilent, meme largeur, centres.
+       Sans largeur imposee, chacun prend celle de son texte et "Discord"
+       parait decale par rapport au bouton d'achat, plus long. */
+    .nav-actions {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      /* meme gabarit que le menu de langue, juste au-dessus */
+      max-width: 240px;
+      margin-left: 0;
+      gap: 1rem;
+    }
+
+    /* Le <strong> repasse en bloc : en flex, le lien se calait a gauche. */
+    .nav-actions strong {
+      display: block;
+      width: 100%;
+    }
+
+    .nav-actions .nav-button {
+      display: block;
+      width: 100%;
+      /* .nav a impose margin:14px 0 : le gap suffit ici */
+      margin: 0;
+      text-align: center;
+      box-sizing: border-box;
     }
   }
 
@@ -1235,5 +1328,9 @@
 
     .nav-button {
       padding: .7rem .9rem;
+    }
+
+    .nav-actions {
+      margin-left: .9rem;
     }
   }
